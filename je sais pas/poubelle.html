@@ -1,0 +1,45 @@
+
+
+<div class="container">
+    <img class ="presentimg" src="test.webp" alt="">
+    <div>
+        <p class="presentxt">Salut la team c'est Akashito mdr ça code ou quoi la team ? fav rt </p>
+    </div>
+</div>
+<div class="container2">
+    <div>
+        <p class="presentxt2">Tiens beaugoss cadeau  une fleur </p>
+    </div>
+    <img class ="presentimg2" src="fleurs.webp" alt="">
+</div>
+<div class="container">
+    <img class ="presentimg" src="laptop.webp" alt="">
+    <div>
+        <p class="presentxt"> Clique ici pour join le serveur my G ! </p>
+        <a href="https://discord.com/invite/7BnuvahSvP" class="join">JOIN !</a>
+    </div>
+</div>
+<div class="container2">
+    <div>
+        <p class="presentxt2">ÉCOUTE CA MON GARS DE LA VRAI MUSIQUE ! </p>
+    </div>
+    
+    <audio controls>
+        <source src="YouCan'tHurryLove.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+    <img class ="presentimg2" src="music.webp" alt="">  
+</div>*/
+<div>
+    <img id="scan" src="20thCB9/p (1).jpg" onclick="nextPage()">
+</div>
+<script>
+    var page = 1 
+    function nextPage(){
+        var currentPage = document.getElementById("scan");
+        page += 1;
+        var mdr = "20thCB9/p ("+page.toString()+").jpg";
+        currentPage.setAttribute("src",mdr);
+        currentPage.style.transition ="2s"
+}
+</script>

@@ -1,0 +1,113 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background-color: #0E0423;
+
+    
+}
+
+h1{
+    text-align: center;
+    color: white;
+    font-family: "General Sans", sans-serif;
+    font-weight: 700;
+    font-size: 128px;
+    text-shadow: rgba(255,255,255,1) 0px 0px 31px;
+}
+.item-1{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    z-index: -1 ;
+
+}
+.btn{
+    display: flex;
+    justify-content: center;
+}
+.navbar{
+    margin: 4px;
+    font-family: "General Sans", sans-serif;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 5px;
+    font-size: 30px;
+    border-radius: 10px;
+    border:solid white;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    box-shadow: rgba(255,255,255,1) 0px 0px 31px;
+}
+.navbar:hover{
+    color: #0E0423;
+    background-color: white;
+    transition: 500ms;
+}
+
+.main{
+    margin-top: 10%;
+    animation: spawn 4.5s;
+}
+
+
+
+@keyframes spawn {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+.container{
+    margin-top: -1110%;
+    display: flex;
+    justify-content: center;
+}
+.card{
+   background-image: url("scp.jpg");
+   width: 320px;
+   height: 220px;
+   border-radius: 10px;
+}
+.card-img{
+    border-radius: 10px;
+    background-image:url("scp.jpg");
+    height: 120px;;
+}
+h2{
+    font-family: "General Sans", sans-serif;
+}
+canvas{
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    background-color: #001a33;
+}
+
+.menu-btn{
+    display: flex;
+    justify-content: center;
+    margin-bottom:100px ;
+}
+
+.btn-play{
+    padding: 10px;
+    margin: 2px;;
+    background-color: green;
+    font-family: "General Sans", sans-serif;
+    font-weight: 2000;
+    border-radius: 5px;
+}
+.btn-play:hover{
+    cursor: pointer;
+    background-color: antiquewhite;
+    transition: 5ms;
+}

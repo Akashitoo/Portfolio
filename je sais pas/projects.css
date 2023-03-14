@@ -1,0 +1,57 @@
+body{
+    background-color: #0E0423;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    font-family: "General Sans", sans-serif;
+    font-weight: 700;
+    font-size: 128px;
+    text-shadow: rgba(255,255,255,1) 0px 0px 31px;
+}
+.item-1{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    z-index: -1 ;
+    top: 0;
+    right: 500;
+}
+
+.main{
+    position: relative;
+    margin-top: 10%;
+    animation: spawn 4.5s;
+}
+
+@keyframes spawn {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.container{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    animation: spawn 6s;
+}
+.card{
+    display: flex;
+    align-items: baseline;
+    margin: 1%;
+    height: 200px;
+    width: 300px;
+    border-radius: 15px;
+}
+a{
+    padding: 100%;
+}
+.h2-card{
+    font-family: "General Sans", sans-serif;
+    color: aliceblue;
+}

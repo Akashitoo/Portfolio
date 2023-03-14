@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de la vie</title>
+</head>
+<body>
+    <div>
+        <canvas id = "imgCanvas"  onmousemove ="draw(event)" onclick="putCase(event)"width="500px" height="500px"></canvas>
+        <div class="menu-btn">
+            <a class="btn-play" onclick="jdlv.randomFill(500)">Random!</a>
+            <a class="btn-play" onclick="start()">Play!</a>
+            <a class="btn-play" onclick="jdlv.emptyTab()">Remove!</a>
+        </div>
+
+    </div>
+    
+   
+</body>
+<script src="jdlv.js"></script>
+<style>
+    body{
+        display: flex;
+        background-color: #0E0423;
+    }
+    div{
+        margin: auto;
+    }
+    canvas{
+        background-color: #001a33;
+    }
+    .menu-btn{
+        display: flex;
+        justify-content: center;
+    }
+    .btn-play{
+        margin-left: 5px;
+        text-decoration: none;
+        font-weight: 1000;
+        font-family: 'Courier New', Courier, monospace;
+        background-color: greenyellow;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .btn-play:hover{
+        cursor: pointer;
+    }
+</style>
+</html>
