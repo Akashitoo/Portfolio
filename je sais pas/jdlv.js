@@ -1,16 +1,21 @@
 
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
-var isStart = false; 
+var isStart = false;
+
+function mod(n, m) {
+  return ((n % m) + m) % m;
+}
+
 class Game{
     constructor(){
         this.currenttab = [];
     }
 
     generateTab(){
-        for(var i = 1 ; i< 51 ; i++){
-            var l = []
-            for(var j = 1 ; j<51 ; j++){
+        for(var i = 1 ; i < 51 ; i++){
+            var l = [] 
+            for(var j = 1 ; j < 51 ; j++){
                 l.push(false);
             }
             this.currenttab.push(l);
@@ -25,8 +30,8 @@ class Game{
     }
     
     displayGrid(){
-        for(var i = 0 ; i< 50 ; i++){
-            for(var j = 0 ; j<50 ; j++){
+        for(var i = 0 ; i < 50 ; i++){
+            for(var j = 0 ; j < 50 ; j++){
                 if(this.currenttab[i][j]){
                     ctx.fillStyle = "red";
                     ctx.fillRect(i*10,j*10,10,10);
@@ -37,8 +42,8 @@ class Game{
     }
     emptyTab(){
         isStart = false;
-        for(var i = 0 ; i<50; i++){
-            for(var j = 0 ; j<50 ; j++){
+        for(var i = 0 ; i < 50; i++){
+            for(var j = 0 ; j < 50 ; j++){
                 this.currenttab[i][j] = false;
             }
         }
@@ -49,90 +54,20 @@ class Game{
     }
     countNeighbor(x,y){
 
-        var nbvoisin = 0;
-        if(x!==0 && x!== 49 && y!==0 && y!==49){
-            
-            var listX = [-1,0,1]
+	    var nbvoisin = 0; 
+	    var listX = [-1,0,1]
             var listY = [-1,0,1];
 
             for(const l of listY){
                 for(const c of listX){
-                    if(c===0 && l===0){}
-                    else{
-                        if(this.currenttab[y+l][x+c]){
+                    if(!(c===0 && l===0)){
+                        if(this.currenttab[mod(y+l, 50)][mod(x+c, 50)]){
                             nbvoisin += 1;
                         }
                     }   
                 }
             }
-        }
-
-        if(x===0 && y!==0 && y!==49){
-
-            var listX = [1,0,49];
-            var listY = [-1,0,1];
-
-            for(const l of listY){
-                for(const c of listX){
-                    if(c===0 && l===0){}
-                    else{
-                        if(this.currenttab[y+l][c]){
-                            nbvoisin += 1;
-                        }
-                    }   
-                }
-            }
-        }
-        if(x===49 && y!==0 && y!==49){
-            var listX = [48,49,0];
-            var listY = [-1,0,1];
-            var neighbor = [];
-            for(const l of listY){
-                for(const c of listX){
-                    if(c===49 && l===0){}
-                    else{
-                        neighbor.push([c,y+l]);
-                        if(this.currenttab[y+l][c]){
-                            nbvoisin += 1;
-                        }
-                    }   
-                }
-            }   
-            console.log(x,y,neighbor);
-            
-        }
-
-        if(y=== 0 && x!==0 && x!==49){
-            var listX = [-1,0,1];
-            var listY = [1,0,49];
-
-            for(const l of listY){
-                for(const c of listX){
-                    if(c===0 && l===0){}
-                    else{
-                        if(this.currenttab[l][x+c]){
-                            nbvoisin += 1;
-                        }
-                    }   
-                }
-            }   
-        }
-        if(y=== 49 && x!==0 && x!==49){
-            var listX = [-1,0,1];
-            var listY = [48,49,0];
-
-            for(const l of listY){
-                for(const c of listX){
-                    if(c===49 && l===0){}
-                    else{
-                        if(this.currenttab[l][x+c]){
-                            nbvoisin += 1;
-                        }
-                    }   
-                }
-            }   
-        }
-        return nbvoisin
+	    return nbvoisin
     }
 
     evolution(){
